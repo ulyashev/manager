@@ -24,6 +24,7 @@ Ext.define('AM.controller.Users', {
             values = form.getValues();
     
         record.set(values);
+        this.getUsersStore().sync();
         win.close();
     },
     editUser: function(grid, record) {
