@@ -6,7 +6,6 @@ Ext.define('AM.controller.Users', {
         'user.List',
         'user.Edit'
     ],
-
     init: function() {
         this.control({
             'viewport > userlist': {

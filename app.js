@@ -10,11 +10,16 @@ Ext.application({
 
     launch: function() {
         Ext.create('Ext.container.Viewport', {
-            layout: 'fit',
+            layout: 'auto',
             items: [
-                {
-                    xtype: 'userlist'
-                }
+                {xtype: 'userlist'},
+               {
+                xtype: 'button',
+                text : 'Add user',
+                // margin:'75 0 0 125',
+                enableToggle: true                
+            }
+            
             ]
         });
     }
