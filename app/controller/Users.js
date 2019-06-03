@@ -4,12 +4,16 @@ Ext.define('AM.controller.Users', {
     models: ['User'],
     views: [
         'user.List',
-        'user.Edit'
+        'user.Edit',
+        'user.Add'
     ],
     init: function() {
         this.control({
             'viewport > userlist': {
                 itemdblclick: this.editUser
+            },
+            'button': {
+                click: this.addUser
             },
             'useredit button[action=save]': {
                 click: this.updateUser
@@ -25,6 +29,11 @@ Ext.define('AM.controller.Users', {
         record.set(values);
         this.getUsersStore().sync();
         win.close();
+    },
+    addUser: function() {
+        var view = Ext.widget('useradd');
+
+        view.down('form').loadRecord(record);
     },
     editUser: function(grid, record) {
         var view = Ext.widget('useredit');
