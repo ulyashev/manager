@@ -18,6 +18,11 @@ Ext.define('AM.view.user.Edit', {
                     },
                     {
                         xtype: 'textfield',
+                        name : 'role',
+                        fieldLabel: 'Role'
+                    },
+                    {
+                        xtype: 'textfield',
                         name : 'email',
                         fieldLabel: 'Email'
                     }
