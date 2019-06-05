@@ -34,12 +34,12 @@ Ext.define('AM.controller.Users', {
         win.close();
     },
     saveUser: function(button) {
-        var win    = button.up('window');
-        var form   = win.down('form');
+        var win = button.up('window');
+        var form = win.down('form');
         values = form.getValues();
         store = this.getUsersStore();
-        console.log(store);
         store.add(values);
+        win.close();
     },
     addUser: function() {
         var view = Ext.widget('useradd');   
