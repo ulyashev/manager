@@ -39,6 +39,7 @@ Ext.define('AM.controller.Users', {
         values = form.getValues();
         store = this.getUsersStore();
         store.add(values);
+        store.sync();
         win.close();
     },
     addUser: function() {
