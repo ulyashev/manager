@@ -7,8 +7,4 @@ Ext.define('AM.store.Users', {
         type: 'localstorage',
         id  : 'users'
 },
-data: [
-    {name: 'Ed',    email: 'ed@sencha.com'},
-    {name: 'Tommy', email: 'tommy@sencha.com'}
-]
 });
