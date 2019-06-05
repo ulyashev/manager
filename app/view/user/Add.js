@@ -38,5 +38,5 @@ Ext.define('AM.view.user.Add', {
         ];
 
         this.callParent(arguments);
-    }
-});
+    },
+    });

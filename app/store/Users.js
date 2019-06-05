@@ -4,15 +4,11 @@ Ext.define('AM.store.Users', {
     autoLoad: true,
 
     proxy: {
-        type: 'ajax',
-        api: {
-            read: 'data/users.json',
-            update: 'data/updateUsers.json'
-        },
-        reader: {
-            type: 'json',
-            root: 'users',
-            successProperty: 'success'
-        }
-    }
+        type: 'localstorage',
+        id  : 'users'
+},
+data: [
+    {name: 'Ed',    email: 'ed@sencha.com'},
+    {name: 'Tommy', email: 'tommy@sencha.com'}
+]
 });

@@ -12,8 +12,11 @@ Ext.define('AM.controller.Users', {
             'viewport > userlist': {
                 itemdblclick: this.editUser
             },
-            'button': {
+            'viewport > button[id=adduser]': {
                 click: this.addUser
+            },
+            'useradd button[action=save]': {
+                click: this.saveUser
             },
             'useredit button[action=save]': {
                 click: this.updateUser
@@ -30,14 +33,20 @@ Ext.define('AM.controller.Users', {
         this.getUsersStore().sync();
         win.close();
     },
-    addUser: function() {
-        var view = Ext.widget('useradd');
-
-        view.down('form').loadRecord(record);
+    saveUser: function(button) {
+        var win    = button.up('window');
+        var form   = win.down('form');
+        values = form.getValues();
+        store = this.getUsersStore();
+        console.log(store);
+        store.add(values);
     },
-    editUser: function(grid, record) {
+    addUser: function() {
+        var view = Ext.widget('useradd');   
+     },
+    
+     editUser: function(grid, record) {
         var view = Ext.widget('useredit');
-
         view.down('form').loadRecord(record);
     }
 });

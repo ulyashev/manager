@@ -15,8 +15,8 @@ Ext.application({
                 {xtype: 'userlist'},
                {
                 xtype: 'button',
+                id: 'adduser',
                 text : 'Add user',
-                // margin:'75 0 0 125',
                 enableToggle: true                
             }
             
